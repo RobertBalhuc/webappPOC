@@ -1,0 +1,10 @@
+{
+  "name": "standalone-webapp",
+  "version": "0.0.1",
+  "description": "just a frontend  stand of concept webapp",
+  "author": "Bugeac Marius",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jquery": "^3.1.0"
+  }
+}

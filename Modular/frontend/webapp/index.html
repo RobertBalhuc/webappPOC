@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Standalone</title>
+<link rel="stylesheet" href="./style.css">
+</thead>
+<body>
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>First Name</th>
+					<th>Last name</th>
+				</tr>
+			</thead>
+			<tbody id="user-data-container">
+				<tr>
+				<td colspan="3">Loading data....</td>
+
+			
+				
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript" src="./jquery.js"></script>
+	<script type="text/javascript">
+	var userContainer=jQuery("user-data-container")
+	jQuery.ajax({
+		url:'http://localhost:3001/users'
+	}).then(function(serverResponse){
+		userContainer.empty();
+		for( var key in serverResponse){
+			var responseItem=serverResponse[key];
+			var template=jQuery('<tr><th scope="row" class="table-id"></th><td class="table-fname"></td><td class="table-lname"></td><td class="table-username"></td></tr>')
+			tamplate.find('.table-id').html(responseItem.id);
+			tamplate.find('.table-fname').html(responseItem.fname);
+			tamplate.find('.table-lname').html(responseItem.lname);
+			tamplate.find('.table-username').html(responseItem.username);
+			userContainer.append(template);
+		}
+	})
+	</script>
+</body>
+</html>

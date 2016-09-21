@@ -1,0 +1,9 @@
+{
+	"name":"standalone-webapp",
+	"version": "0.0.1",
+	"description":"just a backend proof of concept webapp",
+	"author":"Balhuc Robert",
+	"dependencies":{
+		"express":"^4.14.0"
+	}
+}
